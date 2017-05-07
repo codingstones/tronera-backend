@@ -1,4 +1,3 @@
-const expect = require('chai').expect;
 const services = require('../src/index');
 
 describe("Twitter Service", () => {
