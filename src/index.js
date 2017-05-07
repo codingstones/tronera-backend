@@ -15,6 +15,19 @@ class TwitterService {
   }
 }
 
+function buildFeedConsumer(feed) {
+  currentFeedPosition = -1;
+  return {retrieveNextFeed, currentFeedPosition}
+
+  function retrieveNextFeed() {
+    if (feed.length == 0) return {};
+    currentFeedPosition++;
+    if (currentFeedPosition >= feed.length) return {};
+    return feed[currentFeedPosition];
+  }
+}
+
 module.exports = {
-  TwitterService
+  TwitterService,
+  buildFeedConsumer
 }
